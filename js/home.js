@@ -22,13 +22,8 @@ $(window).resize(resize);
 $(document).ready(resize);
 
 
-var toggleSound = new Audio('toggle.wav');
-
 $(document).ready(function() {
-	$('section div div').click(function() {
-		toggleSound.play();
-		$(this).toggleClass('circle');
-	});
+
 });
 
 document.addEventListener('deviceready', function() {
