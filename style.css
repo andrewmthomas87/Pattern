@@ -15,10 +15,6 @@ body {
 	background-color: #fff;
 }
 
-section {
-	display: none;
-}
-
 section>div {
 	display: inline-block;
 	width: 30%;

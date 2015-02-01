@@ -11,14 +11,13 @@ $(window).resize(resize);
 $(document).ready(resize);
 
 
-var tileSelected = true;
+var tileSelected = false;
 
 document.addEventListener('deviceready', function() {
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
-			$('section').fadeIn('fast');
 			setInterval(selectRandomTile, 1000);
 		}, 500);
 	});
