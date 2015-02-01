@@ -49,14 +49,14 @@ document.addEventListener('deviceready', function() {
 							}, 750);
 						});
 					}
-				}, 400);
+				}, 250);
 			}
 			else {
 				activeTile = true;
 				$(this).addClass('active');
 				setTimeout(function() {
 					$('section div div.active').removeClass('active');
-				}, 400);
+				}, 250);
 				$('h1').fadeOut('fast', function() {
 					$('h1').html('<span class="incorrect">Incorrect</span>');
 					$('h1').fadeIn('fast');
