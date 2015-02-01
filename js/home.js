@@ -20,6 +20,8 @@ var playback = true;
 var position = 0;
 var activeTile = false;
 
+var showingScore = false;
+
 // document.addEventListener('deviceready', function() {
 $(document).ready(function() {
 	$('img#play').click(function() {
@@ -53,52 +55,57 @@ $(document).ready(function() {
 			else {
 				activeTile = true;
 				$(this).addClass('active');
+				setTimeout(function() {
+					$('section div div.active').removeClass('active');
+				}, 400);
 				$('h1').fadeOut('fast', function() {
 					$('h1').html('<span class="incorrect">Incorrect</span>');
 					$('h1').fadeIn('fast');
-					setTimeout(function() {
-						$('div#overlay').fadeIn(2500, function() {
-							playback = true;
-							position = 0;
-							activeTile = false;
-							$('h1').hide();
+					if (!localStorage.highScore) {
+						localStorage.highScore = 0;
+					}
+					if (pattern.length - 1 > localStorage.highScore) {
+						localStorage.highScore = pattern.length;
+					}
+					$('div#score p.score').html(pattern.length - 1);
+					$('div#score p.high-score').html(localStorage.highScore);
+					$('div#overlay').fadeIn(1500, function() {
+						pattern = [];
+						playback = true;
+						position = 0;
+						activeTile = false;
+						$('h1').hide();
+						$('div#score').show();
+						$('div#score h2.score').fadeIn('fast', function() {
+							$('div#score p.score').fadeIn('fast', function() {
+								$('div#score h2.high-score').fadeIn('fast', function() {
+									$('div#score p.high-score').fadeIn('fast', function() {
+										showingScore = true;
+									});
+								});
+							});
 						});
-						if (!localStorage.highScore) {
-							localStorage.highScore = 0;
-						}
-						if (pattern.length - 1 > localStorage.highScore) {
-							localStorage.highScore = pattern.length;
-						}
-						$('div#score p:first-child').html(pattern.length - 1);
-						$('div#score p:last-child').html(localStorage.highScore);
-						setTimeout(function() {
-							$('div#score').show();
-							$('div#score h2:first-child').fadeIn('fast', function() {
-								$('div#score p:first-child').fadeIn('fast');
-							});
-						}, 1000);
-						setTimeout(function() {
-							$('div#score h2:last-child').fadeIn('fast', function() {
-								$('div#score p:last-child').fadeIn('fast');
-							});
-						}, 2000);
-					}, 1000);
+					});
 				});
 			}
 		}
 	});
-	$('div#score').click(function() {
-		$('div#score h2:last-child').fadeOut('fast', function() {
-			$('div#score p:last-child').fadeOut('fast');
-		});
-		setTimeout(function() {
-			$('div#score h2:first-child').fadeOut('fast', function() {
-				$('div#score p:first-child').fadeOut('fast');
+	$('body').click(function() {
+		if (showingScore) {
+			showingScore = false;
+			$('div#score p.high-score').fadeOut('fast', function() {
+				$('div#score h2.high-score').fadeOut('fast', function() {
+					$('div#score p.score').fadeOut('fast', function() {
+						$('div#score h2.score').fadeOut('fast', function() {
+							$('div#score').hide();
+							setTimeout(function() {
+								$('img#play').fadeIn('fast');
+							}, 1000);
+						});
+					});
+				});
 			});
-		}, 750);
-		setTimeout(function() {
-			$('img#play').fadeIn('fast');
-		}, 1250);
+		}
 	});
 	setTimeout(function() {
 		$('img#play').fadeIn('fast');
