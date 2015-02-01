@@ -23,7 +23,12 @@ $(document).ready(resize);
 
 
 $(document).ready(function() {
-
+	$('img#play').click(function() {
+		$(this).fadeOut('fast');
+		setTimeout(function() {
+			$('div#overlay').fadeOut('fast');
+		}, 500);
+	});
 });
 
 document.addEventListener('deviceready', function() {
