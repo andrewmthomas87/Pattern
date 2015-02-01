@@ -16,6 +16,7 @@ function resize() {
 			'padding': ((windowHeight - windowWidth) / 2) + 'px 0'
 		});
 	}
+	$('img#play').css('left', (($(window).width() - $('img#play').width()) / 2) + 'px');
 }
 
 $(window).resize(resize);

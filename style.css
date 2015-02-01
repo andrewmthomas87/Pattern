@@ -41,8 +41,7 @@ div#overlay {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: rgba(255, 255, 255, 0.75);
-	text-align: center;
+	background-color: rgba(255, 255, 255, 0.875);
 	z-index: 100;
 }
 
@@ -50,4 +49,5 @@ img#play {
 	position: fixed;
 	top: 40%;
 	height: 20%;
+	z-index: 101;
 }
