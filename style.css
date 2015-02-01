@@ -93,12 +93,11 @@ div#overlay {
 h3 {
 	display: none;
 	position: fixed;
-	top: calc(50% - 6em);
 	left: 0;
 	right: 0;
 	color: #1abc9c;
 	width: 100%;
-	font-size: 5em;
+	font-size: 4em;
 	font-weight: 400;
 	text-align: center;
 	z-index: 101;
@@ -107,12 +106,11 @@ h3 {
 h4 {
 	display: none;
 	position: fixed;
-	top: calc(50% - 5.25em);
 	left: 0;
 	right: 0;
 	color: #2ecc71;
 	width: 100%;
-	font-size: 5em;
+	font-size: 4em;
 	font-weight: 400;
 	text-align: center;
 	z-index: 101;
