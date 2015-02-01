@@ -24,6 +24,7 @@ var activeTile = false;
 var showingScore = false;
 
 document.addEventListener('deviceready', function() {
+	alert('Device ready');
 	tones[0] = new Media('tone1.wav');
 	tones[1] = new Media('tone2.wav');
 	tones[2] = new Media('tone3.wav');
