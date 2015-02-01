@@ -30,10 +30,11 @@ section>div {
 section div div {
 	width: 100%;
 	height: 100%;
-	transition: transform 0.125s ease;
+	transition: -webkit-transform 0.125s ease, transform 0.125s ease;
 }
 
 section div div.active {
+	-webkit-transform: scale3d(1.0625, 1.0625, 1.0625);
 	transform: scale3d(1.0625, 1.0625, 1.0625);
 }
 
