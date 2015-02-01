@@ -34,35 +34,35 @@ section div div {
 	transition: border-radius 0.125s ease;
 }
 
-section div div:nth-child(1) {
+section>div:nth-child(1) div {
 	background-color: #3498db;
 }
 
-section div div:nth-child(1).active {
+section>div:nth-child(1) div.active {
 	background-color: #2980b9;
 }
 
-section div div:nth-child(2) {
+section>div:nth-child(2) div {
 	background-color: #2ecc71;
 }
 
-section div div:nth-child(2).active {
+section>div:nth-child(2) div.active {
 	background-color: #27ae60;
 }
 
-section div div:nth-child(3) {
+section>div:nth-child(3) div {
 	background-color: #f1c40f;
 }
 
-section div div:nth-child(3).active {
+section>div:nth-child(3) div.active {
 	background-color: #f39c12;
 }
 
-section div div:nth-child(4) {
+section>div:nth-child(4) div {
 	background-color: #e74c3c;
 }
 
-section div div:nth-child(4).active {
+section>div:nth-child(4) div.active {
 	background-color: #c0392b;
 }
 
