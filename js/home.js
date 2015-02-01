@@ -12,30 +12,31 @@ $(window).resize(resize);
 $(document).ready(resize);
 
 
-var tileSelected = false;
+var pattern = [1, 2, 3, 4, 3, 2, 1];
 
 document.addEventListener('deviceready', function() {
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
-			setInterval(selectRandomTile, 1000);
+			setTimeout(updatePattern, 500);
 		}, 500);
-	});
-	$('section div div').click(function() {
-		$(this).toggleClass('active');
 	});
 	setTimeout(function() {
 		$('img#play').fadeIn('fast');
 	}, 500);
 }, false);
 
-function selectRandomTile() {
-	if (tileSelected) {
-		$('section div div.active').removeClass('active');
+function updatePattern() {
+	pattern[pattern.length] = Math.floor(Math.random() * 4) + 1;
+	$('h1').html('Watch');
+	$('h1').fadeIn('fast');
+	for (i = 0; i < pattern.length; i++) {
+		setTimeout(function(n) {
+			$('section div:nth-child(' + n + ') div').addClass('active');
+		}, i * 2000 - 1000, pattern[i]);
+		setTimeout(function(n) {
+			$('section div:nth-child(' + n + ') div').removeClass('active');
+		}, i * 2000 + 250, pattern[i]);
 	}
-	else {
-		$('section div:nth-child(' + (Math.floor(Math.random() * 4) + 1) + ') div').addClass('active');
-	}
-	tileSelected = !tileSelected;
 }
