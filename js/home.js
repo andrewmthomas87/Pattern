@@ -19,8 +19,13 @@ function resize() {
 }
 
 $(window).resize(resize);
-
 $(document).ready(resize);
+
+$(document).ready(function() {
+	$('section div div').click(function() {
+		$(this).toggleClass('circle');
+	});
+});
 
 document.addEventListener('deviceready', function() {
 	setTimeout(function() {
