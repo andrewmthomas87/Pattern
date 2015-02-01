@@ -13,7 +13,7 @@ function resize() {
 $(window).resize(resize);
 $(document).ready(resize);
 
-var tones = [];
+// var tones = [];
 
 var pattern = [];
 
@@ -25,10 +25,12 @@ var showingScore = false;
 
 document.addEventListener('deviceready', function() {
 	alert('Device ready');
+	/*
 	tones[0] = new Media('tone1.wav');
 	tones[1] = new Media('tone2.wav');
 	tones[2] = new Media('tone3.wav');
 	tones[3] = new Media('tone4.wav');
+	*/
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
@@ -39,7 +41,7 @@ document.addEventListener('deviceready', function() {
 	$('section div div').click(function() {
 		if (!(playback || activeTile)) {
 			if ($('section div div').index(this) + 1 == pattern[position]) {
-				tones[pattern[position] - 1].play();
+				// tones[pattern[position] - 1].play();
 				activeTile = true;
 				position++;
 				$(this).addClass('active');
@@ -59,7 +61,7 @@ document.addEventListener('deviceready', function() {
 				}, 250);
 			}
 			else {
-				tones[$('section div div').index(this)].play();
+				// tones[$('section div div').index(this)].play();
 				activeTile = true;
 				$(this).addClass('active');
 				setTimeout(function() {
@@ -125,7 +127,7 @@ function updatePattern() {
 	$('h1').fadeIn('slow');
 	for (i = 0; i < pattern.length; i++) {
 		setTimeout(function(n) {
-			tones[n - 1] - 1].play();
+			// tones[n - 1] - 1].play();
 			$('section div:nth-child(' + n + ') div').addClass('active');
 		}, (i + 1.5) * 750, pattern[i]);
 		setTimeout(function(n) {
