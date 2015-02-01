@@ -13,6 +13,12 @@ function resize() {
 $(window).resize(resize);
 $(document).ready(resize);
 
+var tones = [
+	new Media('tone1.wav'),
+	new Media('tone2.wav'),
+	new Media('tone3.wav'),
+	new Media('tone4.wav')
+];
 
 var pattern = [];
 
@@ -33,6 +39,7 @@ document.addEventListener('deviceready', function() {
 	$('section div div').click(function() {
 		if (!(playback || activeTile)) {
 			if ($('section div div').index(this) + 1 == pattern[position]) {
+				tones[pattern[position] - 1].play();
 				activeTile = true;
 				position++;
 				$(this).addClass('active');
