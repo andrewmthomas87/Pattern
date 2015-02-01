@@ -41,7 +41,7 @@ document.addEventListener('deviceready', function() {
 				activeTile = true;
 				position++;
 				$(this).addClass('active');
-				tones[pattern[position] - 1].play();
+				tones[pattern[position - 1] - 1].play();
 				setTimeout(function() {
 					$('section div:nth-child(' + pattern[position - 1] + ') div').removeClass('active');
 					activeTile = false;
