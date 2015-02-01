@@ -25,6 +25,8 @@ $(window).resize(resize);
 $(document).ready(resize);
 
 
+var tileSelected = false;
+
 document.addEventListener('deviceready', function() {
 	$('img#play').fadeIn('fast');
 	$('img#play').click(function() {
@@ -37,10 +39,15 @@ document.addEventListener('deviceready', function() {
 	$('section div div').click(function() {
 		$(this).toggleClass('active');
 	});
-	setInterval(selectRandomTile, 500);
+	setInterval(selectRandomTile, 750);
 }, false);
 
 function selectRandomTile() {
-	$('section div div.active').removeClass('active');
-	$('section div:nth-child(' + (Math.floor(Math.random() * 4) + 1) + ') div').addClass('active');
+	if (tileSelected) {
+		$('section div div.active').removeClass('active');
+	}
+	else {
+		$('section div:nth-child(' + (Math.floor(Math.random() * 4) + 1) + ') div').addClass('active');
+	}
+	tileSelected = !tileSelected;
 }
