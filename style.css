@@ -27,22 +27,6 @@ section>div {
 	vertical-align: top;
 }
 
-section>div:nth-child(1) {
-	background-color: #1d9ed2;
-}
-
-section>div:nth-child(2) {
-	background-color: #1d8fd2;
-}
-
-section>div:nth-child(3) {
-	background-color: #1a8dbc;
-}
-
-section>div:nth-child(4) {
-	background-color: #1a80bc;
-}
-
 section div div {
 	width: 100%;
 	height: 100%;
