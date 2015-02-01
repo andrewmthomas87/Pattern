@@ -13,7 +13,7 @@ function resize() {
 $(window).resize(resize);
 $(document).ready(resize);
 
-// var tones = [];
+var tones = [];
 
 var pattern = [];
 
