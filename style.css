@@ -93,24 +93,43 @@ div#overlay {
 h3 {
 	display: none;
 	position: fixed;
-	top: 10%;
+	top: calc(50% - 6em);
 	left: 0;
 	right: 0;
 	color: #1abc9c;
 	width: 100%;
-	font-size: 7em;
+	font-size: 5em;
 	font-weight: 400;
+	text-align: center;
+	z-index: 101;
 }
 
 h4 {
 	display: none;
 	position: fixed;
-	bottom: 10%;
+	top: calc(50% - 5.25em);
 	left: 0;
 	right: 0;
 	color: #2ecc71;
-	font-size: 7em;
+	width: 100%;
+	font-size: 5em;
 	font-weight: 400;
+	text-align: center;
+	z-index: 101;
+}
+
+h5 {
+	display: none;
+	position: fixed;
+	bottom: 0.5em;
+	left: 0;
+	right: 0;
+	color: #95a5a6;
+	width: 100%;
+	font-size: 1em;
+	font-weight: 400;
+	text-align: center;
+	z-index: 101;
 }
 
 img#play {

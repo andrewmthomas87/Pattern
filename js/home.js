@@ -28,12 +28,12 @@ document.addEventListener('deviceready', function() {
 	play = new Media('play.wav');
 	for (i = 0; i < 4; i++) {
 		tones[i] = new Media('tone' + (i + 1) + '.wav');
-		tones[i].setVolume(1);
 	}
 	$('img#play').click(function() {
 		$(this).fadeOut('fast', function() {
 			$('h4').fadeOut('fast', function() {
 				$('h3').fadeOut('fast', function() {
+					$('h5').fadeOut('fast');
 					setTimeout(function() {
 						$('div#overlay').fadeOut('fast');
 						setTimeout(updatePattern, 500);
@@ -115,7 +115,9 @@ document.addEventListener('deviceready', function() {
 							setTimeout(function() {
 								$('h3').fadeIn('fast', function() {
 									$('h4').fadeIn('fast', function() {
-										$('img#play').fadeIn('fast');
+										$('img#play').fadeIn('fast', function() {
+											$('h5').fadeIn('fast');
+										});
 									});
 								});
 							}, 1000);
@@ -128,7 +130,9 @@ document.addEventListener('deviceready', function() {
 	setTimeout(function() {
 		$('h3').fadeIn('fast', function() {
 			$('h4').fadeIn('fast', function() {
-				$('img#play').fadeIn('fast');
+				$('img#play').fadeIn('fast', function() {
+					$('h5').fadeIn('fast');
+				});
 			});
 		});
 	}, 500);
