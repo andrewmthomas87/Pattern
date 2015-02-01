@@ -2,7 +2,7 @@
 function resize() {
 	var windowWidth = $(window).width();
 	var windowHeight = $(window).height();
-	$('h1').css('top', ((windowHeight - windowWidth - $('h1').height()) / 2) + 'px');
+	$('h1').css('top', ((windowHeight - windowWidth) / 2 - $('h1').height()) + 'px');
 	$('section').css({
 		'height': windowWidth + 'px',
 		'padding-top': ((windowHeight - windowWidth) / 2) + 'px'
@@ -36,9 +36,9 @@ function updatePattern() {
 	for (i = 0; i < pattern.length; i++) {
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').addClass('active');
-		}, i * 2000 + 2000, pattern[i]);
+		}, (i + 2) * 1250, pattern[i]);
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').removeClass('active');
-		}, (i + 1.5) * 2000, pattern[i]);
+		}, (i + 2) * 1250 + 750, pattern[i]);
 	}
 }
