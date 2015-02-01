@@ -34,9 +34,9 @@ function updatePattern() {
 	for (i = 0; i < pattern.length; i++) {
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').addClass('active');
-		}, i * 2000 - 1000, pattern[i]);
+		}, i * 2000 + 1000, pattern[i]);
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').removeClass('active');
-		}, i * 2000 + 250, pattern[i]);
+		}, (i + 1) * 2000, pattern[i]);
 	}
 }
