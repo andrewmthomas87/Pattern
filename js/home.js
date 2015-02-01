@@ -1,9 +1,22 @@
 
 document.addEventListener('deviceready', function() {
-	alert('Device ready');
-	var width = Math.min($(window).width(), $(window).height());
-	$('section').css('width', width);
-	$('section').css('height', width);
-	$('section').show('fast');
-	alert('Debug');
+	var windowWidth = $(window).width();
+	var windowHeight = $(window).height();
+	if (windowWidth > windowHeight) {
+		$('section').css({
+			'width': windowHeight,
+			'height': windowWidth,
+			'margin': '0 auto'
+		});
+	}
+	else {
+		$('section').css({
+			'width': windowWidth,
+			'height': windowHeight,
+			'margin': ((windowHeight - windowWidth) / 2) + 'px 0'
+		});
+	}
+	setTimeout(function() {
+		$('section').show('slow');
+	}, 2500);
 }, false);
