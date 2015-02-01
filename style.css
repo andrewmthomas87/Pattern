@@ -34,7 +34,7 @@ section div div {
 }
 
 section div div.active {
-	transform: scale3d(1.125, 1.125, 1.125);
+	transform: scale3d(1.0625, 1.0625, 1.0625);
 }
 
 section>div:nth-child(1) div {
