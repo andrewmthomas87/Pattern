@@ -1,8 +1,9 @@
 
 function resize() {
+	var windowWidth = $(window).width();
 	$('section').css({
-		'height': $(window).width() + 'px',
-		'padding-top': (($(window).height() - $('section').height()) / 2) + 'px'
+		'height': windowWidth + 'px',
+		'padding-top': (($(window).height() - windowWidth) / 2) + 'px'
 	});
 	$('img#play').css('left', (($(window).width() - $('img#play').width()) / 2) + 'px');
 }
