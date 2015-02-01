@@ -19,6 +19,7 @@ section div {
 	display: inline-block;
 	width: 50%;
 	height: 50%;
+	vertical-align: top;
 }
 
 section div:nth-child(1) {
