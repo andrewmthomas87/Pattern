@@ -7,8 +7,8 @@ function resize() {
 		'height': windowWidth + 'px',
 		'padding-top': (5 * (windowHeight - windowWidth) / 8) + 'px'
 	});
-	$('h3').css('top', (0.4 * windowHeight / 4) + 'px');
-	$('h3').css('top', 'calc(' + (0.4 * windowHeight / 4) + 'px + 1em)');
+	$('h3').css('top', (0.4 * windowHeight / 5) + 'px');
+	$('h4').css('top', 'calc(' + (0.4 * windowHeight / 5) + 'px + 1em)');
 	$('img#play').css('left', ((windowWidth - $('img#play').width()) / 2) + 'px');
 }
 
