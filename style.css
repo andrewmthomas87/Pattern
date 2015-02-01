@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-	background-color: #222;
+	background-color: #f9f2e7;
 }
 
 section {
@@ -29,17 +29,17 @@ section div {
 }
 
 section div:nth-child(1) {
-	background-color: #6fc41b;
+	background-color: #00a8c6;
 }
 
 section div:nth-child(2) {
-	background-color: #ffe800;
+	background-color: #40c0cb;
 }
 
 section div:nth-child(3) {
-	background-color: #ff1700;
+	background-color: #aee239;
 }
 
 section div:nth-child(4) {
-	background-color: #00c6c4;
+	background-color: #8fbe00;
 }
