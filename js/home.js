@@ -7,8 +7,8 @@ function resize() {
 		'height': windowWidth + 'px',
 		'padding-top': (5 * (windowHeight - windowWidth) / 8) + 'px'
 	});
-	$('h3').css('top', 'calc(50% - ' + (0.2 * windowHeight) + 'px - 1.75em)');
-	$('h4').css('top', 'calc(50% - ' + (0.2 * windowHeight) + 'px - 0.875em)');
+	$('h3').css('top', 'calc(50% - ' + (0.2 * windowHeight) + 'px - 2.625em)');
+	$('h4').css('top', 'calc(50% - ' + (0.2 * windowHeight) + 'px - 1.75em)');
 	$('img#play').css('left', ((windowWidth - $('img#play').width()) / 2) + 'px');
 }
 
