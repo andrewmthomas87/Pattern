@@ -17,7 +17,6 @@ body {
 
 section {
 	display: none;
-	margin: 0 auto;
 }
 
 section>div {
@@ -31,38 +30,27 @@ section>div {
 section div div {
 	width: 100%;
 	height: 100%;
+	transition: transform 0.125s ease;
+}
+
+section div div.active {
+	transform: scale3d(1.125, 1.125, 1.125);
 }
 
 section>div:nth-child(1) div {
 	background-color: #3498db;
 }
 
-section>div:nth-child(1) div.active {
-	background-color: #9acced;
-}
-
 section>div:nth-child(2) div {
 	background-color: #2ecc71;
-}
-
-section>div:nth-child(2) div.active {
-	background-color: #96e6b8;
 }
 
 section>div:nth-child(3) div {
 	background-color: #f1c40f;
 }
 
-section>div:nth-child(3) div.active {
-	background-color: #f8e287;
-}
-
 section>div:nth-child(4) div {
 	background-color: #e74c3c;
-}
-
-section>div:nth-child(4) div.active {
-	background-color: #f3a69e;
 }
 
 div#overlay {

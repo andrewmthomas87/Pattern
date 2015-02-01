@@ -2,22 +2,7 @@
 function resize() {
 	var windowWidth = $(window).width();
 	var windowHeight = $(window).height();
-	if (windowWidth > windowHeight) {
-		$('section').css({
-			'width': (0.875 * windowHeight) + 'px',
-			'height': (0.875 * windowHeight) + 'px',
-			'padding': '6.25% 0',
-			'margin-top': ''
-		});
-	}
-	else {
-		$('section').css({
-			'width': (0.875 * windowWidth) + 'px',
-			'height': (0.875 * windowWidth) + 'px',
-			'padding': '0 6.25%',
-			'margin-top': ((windowHeight - windowWidth) / 2) + 'px'
-		});
-	}
+	$('section').css('padding-top', (($(window).height() - $('section').height()) / 2) + 'px');
 	$('img#play').css('left', (($(window).width() - $('img#play').width()) / 2) + 'px');
 }
 
@@ -28,18 +13,21 @@ $(document).ready(resize);
 var tileSelected = false;
 
 document.addEventListener('deviceready', function() {
-	$('img#play').fadeIn('fast');
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
-			$('section').fadeIn('fast');
+			$('section').fadeIn('fast', function() {
+				setInterval(selectRandomTile, 1000);
+			});
 		}, 500);
 	});
 	$('section div div').click(function() {
 		$(this).toggleClass('active');
 	});
-	setInterval(selectRandomTile, 1000);
+	setTimeout(function() {
+		$('img#play').fadeIn('fast');
+	}, 1000);
 }, false);
 
 function selectRandomTile() {
