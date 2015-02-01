@@ -18,5 +18,5 @@
 		<preference name='DisallowOverscroll' value='true' />
 		<preference name='UIWebViewBounce' value='false' />
 		<preference name='webviewbounce' value='false' />
-		<preference name='Orientation' value='portrait' />
+		<preference name='orientation' value='portrait' />
 	</widget>

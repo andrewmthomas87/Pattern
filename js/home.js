@@ -1,7 +1,5 @@
 
 function resize() {
-	var windowWidth = $(window).width();
-	var windowHeight = $(window).height();
 	$('section').css({
 		'height': $(window).width() + 'px',
 		'padding-top': (($(window).height() - $('section').height()) / 2) + 'px'
