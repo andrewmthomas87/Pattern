@@ -30,8 +30,6 @@ section>div {
 section div div {
 	width: 100%;
 	height: 100%;
-	border-radius: 20%;
-	transition: border-radius 0.125s ease;
 }
 
 section>div:nth-child(1) div {

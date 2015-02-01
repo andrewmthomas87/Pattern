@@ -28,12 +28,14 @@ $(document).ready(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
+			$('section').fadeIn('fast');
 		}, 500);
+	});
+	$('section div div').click(function() {
+		$(this).toggleClass('active');
 	});
 });
 
 document.addEventListener('deviceready', function() {
-	setTimeout(function() {
-		$('section').fadeIn('fast');
-	}, 1000);
+
 }, false);
