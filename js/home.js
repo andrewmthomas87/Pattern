@@ -22,8 +22,7 @@ var activeTile = false;
 
 var showingScore = false;
 
-// document.addEventListener('deviceready', function() {
-$(document).ready(function() {
+document.addEventListener('deviceready', function() {
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
@@ -65,7 +64,7 @@ $(document).ready(function() {
 						localStorage.highScore = 0;
 					}
 					if (pattern.length - 1 > localStorage.highScore) {
-						localStorage.highScore = pattern.length;
+						localStorage.highScore = pattern.length - 1;
 					}
 					$('div#score p.score').html(pattern.length - 1);
 					$('div#score p.high-score').html(localStorage.highScore);
