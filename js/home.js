@@ -24,15 +24,11 @@ var activeTile = false;
 var showingScore = false;
 
 document.addEventListener('deviceready', function() {
-	alert('Device ready');
 	tones[0] = new Media('tone1.wav');
-	/*
 	tones[1] = new Media('tone2.wav');
 	tones[2] = new Media('tone3.wav');
 	tones[3] = new Media('tone4.wav');
-	*/
 	$('img#play').click(function() {
-		tones[0].play();
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
@@ -42,7 +38,7 @@ document.addEventListener('deviceready', function() {
 	$('section div div').click(function() {
 		if (!(playback || activeTile)) {
 			if ($('section div div').index(this) + 1 == pattern[position]) {
-				// tones[pattern[position] - 1].play();
+				tones[pattern[position] - 1].play();
 				activeTile = true;
 				position++;
 				$(this).addClass('active');
