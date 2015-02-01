@@ -32,6 +32,7 @@ document.addEventListener('deviceready', function() {
 	tones[3] = new Media('tone4.wav');
 	*/
 	$('img#play').click(function() {
+		tones[0].play();
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
