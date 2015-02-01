@@ -39,7 +39,7 @@ document.addEventListener('deviceready', function() {
 	$('section div div').click(function() {
 		$(this).toggleClass('active');
 	});
-	setInterval(selectRandomTile, 750);
+	setInterval(selectRandomTile, 1000);
 }, false);
 
 function selectRandomTile() {
