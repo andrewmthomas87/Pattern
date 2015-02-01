@@ -1,10 +1,7 @@
 
-$(document).ready(function() {
+document.addEventListener('deviceready', function() {
 	var width = min($(window).width(), $(window).height());
 	$('section').css('width', width);
 	$('section').css('height', width);
-});
-
-document.addEventListener('deviceready', function() {
-
+	$('section').show('fast');
 }, false);
