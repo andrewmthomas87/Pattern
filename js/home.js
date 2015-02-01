@@ -5,14 +5,14 @@ document.addEventListener('deviceready', function() {
 	if (windowWidth > windowHeight) {
 		$('section').css({
 			'width': windowHeight,
-			'height': windowWidth,
+			'height': windowHeight,
 			'margin': '0 auto'
 		});
 	}
 	else {
 		$('section').css({
 			'width': windowWidth,
-			'height': windowHeight,
+			'height': windowWidth,
 			'margin': ((windowHeight - windowWidth) / 2) + 'px 0'
 		});
 	}
