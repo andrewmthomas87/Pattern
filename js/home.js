@@ -38,10 +38,10 @@ document.addEventListener('deviceready', function() {
 	$('section div div').click(function() {
 		if (!(playback || activeTile)) {
 			if ($('section div div').index(this) + 1 == pattern[position]) {
-				tones[pattern[position] - 1].play();
 				activeTile = true;
 				position++;
 				$(this).addClass('active');
+				tones[pattern[position] - 1].play();
 				setTimeout(function() {
 					$('section div:nth-child(' + pattern[position - 1] + ') div').removeClass('active');
 					activeTile = false;
@@ -58,9 +58,9 @@ document.addEventListener('deviceready', function() {
 				}, 250);
 			}
 			else {
-				// tones[$('section div div').index(this)].play();
 				activeTile = true;
 				$(this).addClass('active');
+				tones[$('section div div').index(this)].play();
 				setTimeout(function() {
 					$('section div div.active').removeClass('active');
 				}, 250);
@@ -124,8 +124,8 @@ function updatePattern() {
 	$('h1').fadeIn('slow');
 	for (i = 0; i < pattern.length; i++) {
 		setTimeout(function(n) {
-			// tones[n - 1] - 1].play();
 			$('section div:nth-child(' + n + ') div').addClass('active');
+			tones[n - 1].play();
 		}, (i + 1.5) * 750, pattern[i]);
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').removeClass('active');
