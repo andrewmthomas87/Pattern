@@ -30,14 +30,6 @@ $(document).ready(function() {
 			$('div#overlay').fadeOut('fast');
 		}, 500);
 	});
-	$('section div div').click(function() {
-		if (!$(this).hasClass('active')) {
-			$(this).addClass('active');
-			setTimeout(function() {
-				$('section div div.active').removeClass('active');
-			});
-		}
-	});
 });
 
 document.addEventListener('deviceready', function() {
