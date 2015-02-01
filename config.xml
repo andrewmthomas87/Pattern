@@ -12,6 +12,7 @@
 		<gap:config-file platform='ios' parent='UIViewControllerBasedStatusBarAppearance'>
 			<false/>
 		</gap:config-file>
+		<icon src='icon.png' />
 		<name>Pattern</name>
 		<description>Pattern app</description>
 		<author href='andrewthomas.us' email='andrew.developer87@gmail.com'>Andrew Thomas</author>
