@@ -4,17 +4,17 @@ function resize() {
 	var windowHeight = $(window).height();
 	if (windowWidth > windowHeight) {
 		$('section').css({
-			'width': 'calc(' + windowHeight + 'px - 25%)',
-			'height': 'calc(' + windowHeight + 'px - 25%)',
-			'padding': '12.5% 0',
+			'width': (0.875 * windowHeight) + 'px',
+			'height': (0.875 * windowHeight) + 'px',
+			'padding': '6.25% 0',
 			'margin-top': ''
 		});
 	}
 	else {
 		$('section').css({
-			'width': 'calc(' + windowWidth + 'px - 25%)',
-			'height': 'calc(' + windowWidth + 'px - 25%)',
-			'padding': '0 12.5%',
+			'width': (0.875 * windowWidth) + 'px',
+			'height': (0.875 * windowWidth) + 'px',
+			'padding': '0 6.25%',
 			'margin-top': ((windowHeight - windowWidth) / 2) + 'px'
 		});
 	}
