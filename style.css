@@ -1,8 +1,8 @@
 
 @font-face {
 	font-family: 'Lato';
-	src: url('Lato-Light.ttf');
-	font-weight: 300;
+	src: url('Lato-Regular.ttf');
+	font-weight: 400;
 }
 
 * {
@@ -19,6 +19,7 @@ html, body {
 
 body {
 	background-color: #fff;
+	font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -30,11 +31,17 @@ h1 {
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	font-family: 'Lato', sans-serif;
-	font-size: 2.5em;
-	font-weight: 300;
-	text-transform: uppercase;
+	font-size: 3.5em;
+	font-weight: 400;
 	text-align: center;
+}
+
+h1 span.correct {
+	color: #2ecc71;
+}
+
+h1 span.incorrect {
+	color: #e74c3c;
 }
 
 section>div {
@@ -89,4 +96,29 @@ img#play {
 	top: 40%;
 	height: 20%;
 	z-index: 101;
+}
+
+div#score {
+	display: none;
+	position: fixed;
+	top: 25%;
+	text-align: center;
+}
+
+div#score h2 {
+	display: none;
+	color: #1abc9c;
+	padding: 0.125em 0;
+	margin: 0;
+	font-size: 2em;
+	font-weight: 400;
+}
+
+div#score p {
+	display: none;
+	color: #7f8c8d;
+	padding: 0;
+	padding-bottom: 1em;
+	font-size: 1.5em;
+	font-weight: 400;
 }

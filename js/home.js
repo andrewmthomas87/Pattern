@@ -5,7 +5,7 @@ function resize() {
 	$('h1').css('top', ((windowHeight - windowWidth) / 4) + 'px');
 	$('section').css({
 		'height': windowWidth + 'px',
-		'padding-top': ((windowHeight - windowWidth) / 2) + 'px'
+		'padding-top': (5 * (windowHeight - windowWidth) / 8) + 'px'
 	});
 	$('img#play').css('left', ((windowWidth - $('img#play').width()) / 2) + 'px');
 }
@@ -14,15 +14,91 @@ $(window).resize(resize);
 $(document).ready(resize);
 
 
-var pattern = [1, 2, 3, 4, 3, 2, 1];
+var pattern = [];
 
-document.addEventListener('deviceready', function() {
+var playback = true;
+var position = 0;
+var activeTile = false;
+
+// document.addEventListener('deviceready', function() {
+$(document).ready(function() {
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
 			setTimeout(updatePattern, 500);
 		}, 500);
+	});
+	$('section div div').click(function() {
+		if (!(playback || activeTile)) {
+			if ($('section div div').index(this) + 1 == pattern[position]) {
+				activeTile = true;
+				position++;
+				$(this).addClass('active');
+				setTimeout(function() {
+					$('section div:nth-child(' + pattern[position - 1] + ') div').removeClass('active');
+					activeTile = false;
+					if (position == pattern.length) {
+						$('h1').fadeOut('fast', function() {
+							$('h1').html('<span class="correct">Correct!</span>');
+							$('h1').fadeIn('fast');
+							setTimeout(function() {
+								playback = true;
+								$('h1').fadeOut('fast', updatePattern);
+							}, 750);
+						});
+					}
+				}, 400);
+			}
+			else {
+				activeTile = true;
+				$(this).addClass('active');
+				$('h1').fadeOut('fast', function() {
+					$('h1').html('<span class="incorrect">Incorrect</span>');
+					$('h1').fadeIn('fast');
+					setTimeout(function() {
+						$('div#overlay').fadeIn(2500, function() {
+							playback = true;
+							position = 0;
+							activeTile = false;
+							$('h1').hide();
+						});
+						if (!localStorage.highScore) {
+							localStorage.highScore = 0;
+						}
+						if (pattern.length - 1 > localStorage.highScore) {
+							localStorage.highScore = pattern.length;
+						}
+						$('div#score p:first-child').html(pattern.length - 1);
+						$('div#score p:last-child').html(localStorage.highScore);
+						setTimeout(function() {
+							$('div#score').show();
+							$('div#score h2:first-child').fadeIn('fast', function() {
+								$('div#score p:first-child').fadeIn('fast');
+							});
+						}, 1000);
+						setTimeout(function() {
+							$('div#score h2:last-child').fadeIn('fast', function() {
+								$('div#score p:last-child').fadeIn('fast');
+							});
+						}, 2000);
+					}, 1000);
+				});
+			}
+		}
+	});
+	$('div#score').click(function() {
+		$('div#score h2:last-child').fadeOut('fast', function() {
+			$('div#score p:last-child').fadeOut('fast');
+		});
+		setTimeout(function() {
+			$('div#score h2:first-child').fadeOut('fast', function() {
+				$('div#score p:first-child').fadeOut('fast');
+			});
+		}, 750);
+		setTimeout(function() {
+			$('img#play').fadeIn('fast');
+		}, 1250);
 	});
 	setTimeout(function() {
 		$('img#play').fadeIn('fast');
@@ -36,15 +112,17 @@ function updatePattern() {
 	for (i = 0; i < pattern.length; i++) {
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').addClass('active');
-		}, (i + 2) * 750, pattern[i]);
+		}, (i + 1.5) * 750, pattern[i]);
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').removeClass('active');
-		}, (i + 2) * 750 + 400, pattern[i]);
+		}, (i + 1.5) * 750 + 400, pattern[i]);
 	}
 	setTimeout(function() {
 		$('h1').fadeOut('fast', function() {
 			$('h1').html('Repeat');
 			$('h1').fadeIn('fast');
+			playback = false;
+			position = 0;
 		});
-	}, (pattern.length + 4) * 750);
+	}, (pattern.length + 2) * 750);
 }
