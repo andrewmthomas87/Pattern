@@ -1,5 +1,5 @@
 
-document.addEventListener('deviceready', function() {
+function resize() {
 	var windowWidth = $(window).width();
 	var windowHeight = $(window).height();
 	if (windowWidth > windowHeight) {
@@ -16,7 +16,14 @@ document.addEventListener('deviceready', function() {
 			'margin': ((windowHeight - windowWidth) / 2) + 'px 0'
 		});
 	}
+}
+
+$(window).resize(resize);
+
+$(document).ready(resize);
+
+document.addEventListener('deviceready', function() {
 	setTimeout(function() {
-		$('section').show('slow');
-	}, 2500);
+		$('section').fadeIn('fast');
+	}, 1000);
 }, false);
