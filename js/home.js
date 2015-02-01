@@ -13,6 +13,7 @@ function resize() {
 $(window).resize(resize);
 $(document).ready(resize);
 
+var play;
 var tones = [];
 
 var pattern = [];
@@ -24,12 +25,14 @@ var activeTile = false;
 var showingScore = false;
 
 document.addEventListener('deviceready', function() {
+	play = new Media('play.wav');
 	for (i = 0; i < 4; i++) {
 		tones[i] = new Media('tone' + (i + 1) + '.wav');
 		tones[i].setVolume(1);
 	}
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
+		play.play();
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
 			setTimeout(updatePattern, 500);
