@@ -24,10 +24,10 @@ var activeTile = false;
 var showingScore = false;
 
 document.addEventListener('deviceready', function() {
-	tones[0] = new Media('tone1.wav');
-	tones[1] = new Media('tone2.wav');
-	tones[2] = new Media('tone3.wav');
-	tones[3] = new Media('tone4.wav');
+	for (i = 0; i < 4; i++) {
+		tones[i] = new Media('tone' + (i + 1) + '.wav');
+		tones[i].setVolume(1);
+	}
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
