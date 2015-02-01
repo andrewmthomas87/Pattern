@@ -126,10 +126,10 @@ function updatePattern() {
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').addClass('active');
 			tones[n - 1].play();
-		}, (i + 1.5) * 750, pattern[i]);
+		}, (i + 1.5) * 500, pattern[i]);
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').removeClass('active');
-		}, (i + 1.5) * 750 + 400, pattern[i]);
+		}, (i + 1.5) * 500 + 250, pattern[i]);
 	}
 	setTimeout(function() {
 		$('h1').fadeOut('fast', function() {
@@ -138,5 +138,5 @@ function updatePattern() {
 			playback = false;
 			position = 0;
 		});
-	}, (pattern.length + 2) * 750);
+	}, (pattern.length + 2.5) * 500);
 }
