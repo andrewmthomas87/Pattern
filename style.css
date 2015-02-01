@@ -38,7 +38,7 @@ section>div:nth-child(1) div {
 }
 
 section>div:nth-child(1) div.active {
-	background-color: #217dbb;
+	background-color: #1d6fa5;
 }
 
 section>div:nth-child(2) div {
@@ -46,7 +46,7 @@ section>div:nth-child(2) div {
 }
 
 section>div:nth-child(2) div.active {
-	background-color: #25a25a;
+	background-color: #208e4e;
 }
 
 section>div:nth-child(3) div {
@@ -54,7 +54,7 @@ section>div:nth-child(3) div {
 }
 
 section>div:nth-child(3) div.active {
-	background-color: #c29d0b;
+	background-color: #aa8a0a;
 }
 
 section>div:nth-child(4) div {
@@ -62,7 +62,7 @@ section>div:nth-child(4) div {
 }
 
 section>div:nth-child(4) div.active {
-	background-color: #d62c1a;
+	background-color: #bf2718;
 }
 
 div#overlay {
