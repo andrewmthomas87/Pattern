@@ -6,14 +6,14 @@ function resize() {
 		$('section').css({
 			'width': windowHeight,
 			'height': windowHeight,
-			'margin': '0 auto'
+			'padding': '0 auto'
 		});
 	}
 	else {
 		$('section').css({
 			'width': windowWidth,
 			'height': windowWidth,
-			'margin': ((windowHeight - windowWidth) / 2) + 'px 0'
+			'padding': ((windowHeight - windowWidth) / 2) + 'px 0'
 		});
 	}
 }
