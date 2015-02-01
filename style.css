@@ -101,7 +101,7 @@ img#play {
 div#score {
 	display: none;
 	position: fixed;
-	top: 25%;
+	top: 20%;
 	left: 0;
 	right: 0;
 	width: 100%;
