@@ -6,7 +6,7 @@ function resize() {
 		$('section').css({
 			'width': windowHeight,
 			'height': windowHeight,
-			'padding': '0 auto'
+			'padding': ''
 		});
 	}
 	else {
