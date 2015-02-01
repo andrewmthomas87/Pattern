@@ -41,4 +41,12 @@ function updatePattern() {
 			$('section div:nth-child(' + n + ') div').removeClass('active');
 		}, (i + 2) * 750 + 400, pattern[i]);
 	}
+	setTimeout(function() {
+		$('h1').fadeOut('fast', function() {
+			setTimeout(function() {
+				$('h1').html('Repeat');
+				$('h1').fadeIn('fast');
+			}, 500);
+		});
+	}, (pattern.length + 4) * 750);
 }
