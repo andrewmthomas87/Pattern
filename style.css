@@ -29,17 +29,17 @@ section div {
 }
 
 section div:nth-child(1) {
-	background-color: #556270;
+	background-color: #6fc41b;
 }
 
 section div:nth-child(2) {
-	background-color: #4ecdc4;
+	background-color: #ffe800;
 }
 
 section div:nth-child(3) {
-	background-color: #c7f464;
+	background-color: #ff1700;
 }
 
 section div:nth-child(4) {
-	background-color: #ff6b6b;
+	background-color: #00c6c4;
 }
