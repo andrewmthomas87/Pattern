@@ -30,9 +30,40 @@ section>div {
 section div div {
 	width: 100%;
 	height: 100%;
-	background-color: #3498db;
 	border-radius: 10%;
 	transition: border-radius 0.125s ease;
+}
+
+section div div:nth-child(1) {
+	background-color: #3498db;
+}
+
+section div div:nth-child(1).active {
+	background-color: #2980b9;
+}
+
+section div div:nth-child(2) {
+	background-color: #2ecc71;
+}
+
+section div div:nth-child(2).active {
+	background-color: #27ae60;
+}
+
+section div div:nth-child(3) {
+	background-color: #f1c40f;
+}
+
+section div div:nth-child(3).active {
+	background-color: #f39c12;
+}
+
+section div div:nth-child(4) {
+	background-color: #e74c3c;
+}
+
+section div div:nth-child(4).active {
+	background-color: #c0392b;
 }
 
 div#overlay {
@@ -41,7 +72,7 @@ div#overlay {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: rgba(255, 255, 255, 0.875);
+	background-color: #fff;
 	z-index: 100;
 }
 
