@@ -25,7 +25,8 @@ $(window).resize(resize);
 $(document).ready(resize);
 
 
-$(document).ready(function() {
+document.addEventListener('deviceready', function() {
+	$('img#play').fadeIn('fast');
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
@@ -36,8 +37,10 @@ $(document).ready(function() {
 	$('section div div').click(function() {
 		$(this).toggleClass('active');
 	});
-});
-
-document.addEventListener('deviceready', function() {
-
+	setInterval(selectRandomTile, 500);
 }, false);
+
+function selectRandomTile() {
+	$('section div div.active').removeClass('active');
+	$('section div:nth-child(' + (Math.floor(Math.random() * 4) + 1) + ') div').addClass('active');
+}

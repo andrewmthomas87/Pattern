@@ -76,6 +76,7 @@ div#overlay {
 }
 
 img#play {
+	display: none;
 	position: fixed;
 	top: 40%;
 	height: 20%;
