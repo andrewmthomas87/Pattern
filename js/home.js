@@ -1,11 +1,13 @@
 
 function resize() {
 	var windowWidth = $(window).width();
+	var windowHeight = $(window).height();
+	$('h1').css('top', ((windowHeight - windowWidth - $('h1').height()) / 2) + 'px');
 	$('section').css({
 		'height': windowWidth + 'px',
-		'padding-top': (($(window).height() - windowWidth) / 2) + 'px'
+		'padding-top': ((windowHeight - windowWidth) / 2) + 'px'
 	});
-	$('img#play').css('left', (($(window).width() - $('img#play').width()) / 2) + 'px');
+	$('img#play').css('left', ((windowWidth - $('img#play').width()) / 2) + 'px');
 }
 
 $(window).resize(resize);
@@ -34,9 +36,9 @@ function updatePattern() {
 	for (i = 0; i < pattern.length; i++) {
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').addClass('active');
-		}, i * 2000 + 1000, pattern[i]);
+		}, i * 2000 + 2000, pattern[i]);
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').removeClass('active');
-		}, (i + 1) * 2000, pattern[i]);
+		}, (i + 1.5) * 2000, pattern[i]);
 	}
 }
