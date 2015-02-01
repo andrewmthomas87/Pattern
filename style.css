@@ -35,10 +35,7 @@ section div div {
 	transition: border-radius 0.125s ease;
 }
 
-section div div.active {
-	background-color: #5faee3;
-}
-
 section div div.circle {
+	background-color: #34495e;
 	border-radius: 50%;
 }

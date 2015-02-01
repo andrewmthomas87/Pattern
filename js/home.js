@@ -24,10 +24,6 @@ $(document).ready(resize);
 $(document).ready(function() {
 	$('section div div').click(function() {
 		$(this).toggleClass('circle');
-		$(this).addClass('active');
-		setTimeout(function() {
-			$(this).removeClass('active');
-		}, 125);
 	});
 });
 
