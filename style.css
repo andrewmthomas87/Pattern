@@ -53,8 +53,8 @@ section div div {
 }
 
 section div div.active {
-	-webkit-transform: scale3d(1.125, 1.125, 1.125);
-	        transform: scale3d(1.125, 1.125, 1.125);
+	-webkit-transform: scale(1.125, 1.125);
+	        transform: scale(1.125, 1.125);
 }
 
 section>div:nth-child(1) div {
