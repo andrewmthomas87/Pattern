@@ -32,7 +32,7 @@ document.addEventListener('deviceready', function() {
 function updatePattern() {
 	pattern[pattern.length] = Math.floor(Math.random() * 4) + 1;
 	$('h1').html('Watch');
-	$('h1').fadeIn('fast');
+	$('h1').fadeIn('slow');
 	for (i = 0; i < pattern.length; i++) {
 		setTimeout(function(n) {
 			$('section div:nth-child(' + n + ') div').addClass('active');
@@ -43,10 +43,8 @@ function updatePattern() {
 	}
 	setTimeout(function() {
 		$('h1').fadeOut('fast', function() {
-			setTimeout(function() {
-				$('h1').html('Repeat');
-				$('h1').fadeIn('fast');
-			}, 500);
+			$('h1').html('Repeat');
+			$('h1').fadeIn('fast');
 		});
 	}, (pattern.length + 4) * 750);
 }
