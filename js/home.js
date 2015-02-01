@@ -10,16 +10,15 @@ $(window).resize(resize);
 $(document).ready(resize);
 
 
-var tileSelected = false;
+var tileSelected = true;
 
 document.addEventListener('deviceready', function() {
 	$('img#play').click(function() {
 		$(this).fadeOut('fast');
 		setTimeout(function() {
 			$('div#overlay').fadeOut('fast');
-			$('section').fadeIn('fast', function() {
-				setInterval(selectRandomTile, 1000);
-			});
+			$('section').fadeIn('fast');
+			setInterval(selectRandomTile, 1000);
 		}, 500);
 	});
 	$('section div div').click(function() {
@@ -27,7 +26,7 @@ document.addEventListener('deviceready', function() {
 	});
 	setTimeout(function() {
 		$('img#play').fadeIn('fast');
-	}, 1000);
+	}, 500);
 }, false);
 
 function selectRandomTile() {
