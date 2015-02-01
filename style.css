@@ -90,6 +90,29 @@ div#overlay {
 	z-index: 100;
 }
 
+h3 {
+	display: none;
+	position: fixed;
+	top: 10%;
+	left: 0;
+	right: 0;
+	color: #1abc9c;
+	width: 100%;
+	font-size: 7em;
+	font-weight: 400;
+}
+
+h4 {
+	display: none;
+	position: fixed;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+	color: #2ecc71;
+	font-size: 7em;
+	font-weight: 400;
+}
+
 img#play {
 	display: none;
 	position: fixed;

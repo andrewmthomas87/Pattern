@@ -31,12 +31,17 @@ document.addEventListener('deviceready', function() {
 		tones[i].setVolume(1);
 	}
 	$('img#play').click(function() {
-		$(this).fadeOut('fast');
+		$(this).fadeOut('fast', function() {
+			$('h4').fadeOut('fast', function() {
+				$('h3').fadeOut('fast', function() {
+					setTimeout(function() {
+						$('div#overlay').fadeOut('fast');
+						setTimeout(updatePattern, 500);
+					}, 500);
+				});
+			});
+		});
 		play.play();
-		setTimeout(function() {
-			$('div#overlay').fadeOut('fast');
-			setTimeout(updatePattern, 500);
-		}, 500);
 	});
 	$('section div div').click(function() {
 		if (!(playback || activeTile)) {
@@ -108,7 +113,11 @@ document.addEventListener('deviceready', function() {
 						$('div#score h2.score').fadeOut('fast', function() {
 							$('div#score').hide();
 							setTimeout(function() {
-								$('img#play').fadeIn('fast');
+								$('h3').fadeIn('fast', function() {
+									$('h4').fadeIn('fast', function() {
+										$('img#play').fadeIn('fast');
+									});
+								});
 							}, 1000);
 						});
 					});
@@ -117,7 +126,11 @@ document.addEventListener('deviceready', function() {
 		}
 	});
 	setTimeout(function() {
-		$('img#play').fadeIn('fast');
+		$('h3').fadeIn('fast', function() {
+			$('h4').fadeIn('fast', function() {
+				$('img#play').fadeIn('fast');
+			});
+		});
 	}, 500);
 }, false);
 
